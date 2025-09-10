@@ -29,3 +29,12 @@ jobs:
 
       - name: Run Tests
         run: nf-test test --ci --profile docker,local
+
+      - name: upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nf-test-work-dirs-${{ github.run_id }}
+          path: .
+          retention-days: 1
+          if-no-files-found: ignore
