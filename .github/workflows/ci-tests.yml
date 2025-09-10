@@ -28,6 +28,4 @@ jobs:
           sudo mv nf-test /usr/local/bin/
 
       - name: Run Tests
-        with:
-          driver-opts: network=host
         run: nf-test test --ci --profile docker,local
