@@ -12,6 +12,7 @@ nextflow_workflow {
                 kraken_confidence = 0.05
                 kraken_clients = 1
                 run_bracken = false
+                threads = 1
                 kraken_database = [
                     "default": [
                         "name": "testdb-kraken2",
