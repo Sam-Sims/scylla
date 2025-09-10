@@ -35,6 +35,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: nf-test-work-dirs-${{ github.run_id }}
-          path: ./nf-test
+          path: | 
+            ./nf-test/*
+            ./nf-test/tests/*/work/*/*/*/*.command*
           retention-days: 1
           if-no-files-found: ignore
