@@ -33,8 +33,8 @@ nextflow_pipeline {
             
             // check kraken outputs
             assert path("$params.outdir/barcode01/classifications").exists()
-            assert path("$params.outdir/barcode01/classifications/PlusPF.kraken_assignments.tsv").exists()
-            assert path("$params.outdir/barcode01/classifications/PlusPF.kraken_report.txt").exists()
+            assert path("$params.outdir/barcode01/classifications/testdb-kraken2.kraken_assignments.tsv").exists()
+            assert path("$params.outdir/barcode01/classifications/testdb-kraken2.kraken_report.txt").exists()
 
             // check qc outputs
             assert path("$params.outdir/barcode01/qc").exists()
