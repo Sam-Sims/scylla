@@ -37,21 +37,21 @@ nextflow_workflow {
                 input[0] = Channel.of(
                     tuple(
                         "extract_test",
-                        file("/home/jovyan/shared-team/projects/scylla_unit_tests/nf-gen-test-data/test-data/cchf/cchf_mock.fastq", checkIfExists: true)
+                        file("${projectDir}/tests/test-data/extract_all/cchf_mock.fastq", checkIfExists: true)
                     )
                 )
                 input[1] = Channel.of(
                     tuple(
                         "extract_test",
                         "PlusPF",
-                        file("/home/jovyan/shared-team/projects/scylla_unit_tests/nf-gen-test-data/test-data/cchf/cchf_kraken_output.txt", checkIfExists: true)
+                        file("${projectDir}/tests/test-data/extract_all/cchf_kraken_output.txt", checkIfExists: true)
                     )
                 )
                 input[2] = Channel.of(
                     tuple(
                         "extract_test",
                         "PlsuPF",
-                        file("/home/jovyan/shared-team/projects/scylla_unit_tests/nf-gen-test-data/test-data/cchf/cchf_kraken_report.txt", checkIfExists: true)
+                        file("${projectDir}/tests/test-data/extract_all/cchf_kraken_report.txt", checkIfExists: true)
                     )
                 )
                 input[3] = file("${projectDir}/tests/test-data/hcid/3052518/tax_dump", checkIfExists: true)
