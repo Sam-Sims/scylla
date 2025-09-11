@@ -46,6 +46,6 @@ jobs:
         with:
           name: nf-test-work-dirs-${{ github.run_id }}
           include-hidden-files: true
-          path: ./nf-test/*
+          path: ./.nf-test/*
           retention-days: 1
           if-no-files-found: ignore
