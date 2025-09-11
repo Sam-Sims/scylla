@@ -1,6 +1,6 @@
 nextflow_workflow {
 
-    name "Test Workflow assemble_taxa"
+    name "Test Workflow extract_taxa"
     script "modules/extract_all.nf"
     workflow "extract_all"
     tag "unit"
