@@ -3,6 +3,7 @@ nextflow_workflow {
     name "Test Workflow assemble_taxa"
     script "modules/extract_all.nf"
     workflow "extract_all"
+    tag "unit"
 
     test("test_extract_all") {
 
