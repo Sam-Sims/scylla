@@ -25,6 +25,7 @@ process start_kraken_server {
     label "process_high_memory"
     cpus {
         def Integer max_local_threads = workflow.session.config?.executor?.$local?.cpus ?: Runtime.getRuntime().availableProcessors()
+        log.info("kraken server has ${max_local_threads} avail")
         if (max_local_threads == 1) {
             throw new Exception("Cannot run kraken_server and kraken_client at the same time as the local executor appears to be configured with only one CPU.")
         }
