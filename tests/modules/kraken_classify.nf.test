@@ -9,14 +9,12 @@ nextflow_workflow {
 
         when {
             params {
-                threads = 1
-                kraken_clients = 1
                 kraken_database = [
                     "default": [
                         "name": "testdb-kraken2",
                         "path": "${projectDir}/tests/test-data/database/testdb-kraken2",
                         "host": "localhost",
-                        "port": 8085,
+                        "port": 8080,
                     ]
                 ]
             }
@@ -29,7 +27,7 @@ nextflow_workflow {
                     )
                 )
                 input[1] = "default"
-                input[2] = false
+                input[2] = true
                 """
             }
         }
