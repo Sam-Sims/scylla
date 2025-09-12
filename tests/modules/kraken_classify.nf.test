@@ -29,7 +29,7 @@ nextflow_workflow {
                     )
                 )
                 input[1] = "default"
-                input[2] = true
+                input[2] = false
                 """
             }
         }
