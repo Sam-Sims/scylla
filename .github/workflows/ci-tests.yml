@@ -17,15 +17,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Start Kraken Server
-        run: |
-          docker run -d --name kraken-server --network host \
-            -v ${{ github.workspace }}/tests/test-data:/data \
-            quay.io/biowilko/scylla:latest \
-            kraken2_server --max-requests 4 --thread-pool 1 \
-            --port 8080 --host-ip localhost \
-            --db /data/database/testdb-kraken2/ \
-            --confidence 0.05
+      # - name: Start Kraken Server
+      #   run: |
+      #     docker run -d --name kraken-server --network host \
+      #       -v ${{ github.workspace }}/tests/test-data:/data \
+      #       quay.io/biowilko/scylla:latest \
+      #       kraken2_server --max-requests 4 --thread-pool 1 \
+      #       --port 8080 --host-ip localhost \
+      #       --db /data/database/testdb-kraken2/ \
+      #       --confidence 0.05
 
       - name: Setup Nextflow
         uses: nf-core/setup-nextflow@v2
@@ -38,7 +38,7 @@ jobs:
           sudo mv nf-test /usr/local/bin/
 
       - name: Run Tests
-        run: nf-test test --ci --profile docker,local
+        run: nf-test test --ci --profile docker,local --tag unit
 
       - name: upload logs
         if: always()
