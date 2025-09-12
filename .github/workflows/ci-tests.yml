@@ -23,7 +23,7 @@ jobs:
             -v ${{ github.workspace }}/tests/test-data:/data \
             quay.io/biowilko/scylla:latest \
             kraken2_server --max-requests 4 --thread-pool 1 \
-            --port 8080 --host-ip 127.0.0.1 \
+            --port 8080 --host-ip localhost \
             --db /data/database/testdb-kraken2/ \
             --confidence 0.05
 
